@@ -1,23 +1,26 @@
 import os
 import librosa
 import librosa.display
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+
 import numpy as np
 
 # Defina a pasta de entrada e saída
-pasta_entrada = 'C:\\Users\\pedro\\PycharmProjects\\pythonProject\\frequencias\\2018hz\\train'
-pasta_saida = 'C:\\Users\\pedro\\PycharmProjects\\pythonProject\\frequencias\\2018hz\\trainEspec'
+pasta_entrada = '/home/machine/Downloads/SinaisdeTeste/pythonProject/testeDeModelo/audios'
+pasta_saida = '/home/machine/Downloads/SinaisdeTeste/pythonProject/testeDeModelo/espectogramas'
 
 # Crie a pasta de saída se ela não existir
 if not os.path.exists(pasta_saida):
     os.makedirs(pasta_saida)
 
-# Lista todos os arquivos MP3 na pasta de entrada
-arquivos_mp3 = [f for f in os.listdir(pasta_entrada) if f.endswith('.mp3')]
+# Lista todos os arquivos WAV na pasta de entrada
+arquivos_wav = [f for f in os.listdir(pasta_entrada) if f.endswith('.wav')]
 
-# Loop pelos arquivos MP3 e crie os espectrogramas
-for arquivo_mp3 in arquivos_mp3:
-    arquivo_entrada = os.path.join(pasta_entrada, arquivo_mp3)
+# Loop pelos arquivos WAV e crie os espectrogramas
+for arquivo_wav in arquivos_wav:
+    arquivo_entrada = os.path.join(pasta_entrada, arquivo_wav)
 
     # Carregue o áudio usando librosa
     y, sr = librosa.load(arquivo_entrada)
@@ -32,7 +35,7 @@ for arquivo_mp3 in arquivos_mp3:
     plt.title('Espectrograma')
     plt.tight_layout()
 
-    nome_saida = os.path.splitext(arquivo_mp3)[0] + '_espectrograma.png'
+    nome_saida = os.path.splitext(arquivo_wav)[0] + '_espectrograma.png'
     caminho_saida = os.path.join(pasta_saida, nome_saida)
     plt.savefig(caminho_saida)
     plt.close()

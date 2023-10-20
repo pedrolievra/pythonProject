@@ -5,11 +5,11 @@ from sklearn.model_selection import train_test_split
 import numpy as np
 
 # Diretório contendo os arquivos WAV
-diretorio_audio = 'C:\\Users\\pedro\\PycharmProjects\\pythonProject\\'
+diretorio_audio = '/home/machine/Downloads/SinaisdeTeste/pythonProject/frequencias/620hz/test'
 
 # Diretório de saída para os espectrogramas de treinamento e teste
-diretorio_treinamento = 'C:\\Users\\pedro\\PycharmProjects\\pythonProject\\trainfft\\'
-diretorio_teste = 'C:\\Users\\pedro\\PycharmProjects\\pythonProject\\testfft\\'
+diretorio_treinamento = '/home/machine/Downloads/SinaisdeTeste/pythonProject/frequencias/476hz/test'
+diretorio_teste = '/home/machine/Downloads/SinaisdeTeste/pythonProject/frequencias/476hz/train'
 
 # Listar os arquivos WAV no diretório
 arquivos_wav = [f for f in os.listdir(diretorio_audio) if f.endswith('.wav')]
