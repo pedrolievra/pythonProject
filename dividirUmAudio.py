@@ -24,9 +24,9 @@ def dividir_audio_em_trechos(arquivo_audio, duracao_trecho=5.0, diretorio_saida=
     for i, inicio in enumerate(range(0, len(y), amostras_por_trecho)):
         fim = inicio + amostras_por_trecho
         trecho = y[inicio:fim]
-        nome_trecho = os.path.join(diretorio_saida, f"trecho_{i}.wav")
+        nome_trecho = os.path.join(diretorio_saida, f"2{i}.wav")
         sf.write(nome_trecho, trecho, sr)
 
 # Exemplo de uso
-dividir_audio_em_trechos("/home/machine/Downloads/teste2.mp3",
-                         diretorio_saida="/home/machine/Downloads/SinaisdeTeste/pythonProject/testeDeModelo/audios")
+dividir_audio_em_trechos("C:\\Users\\pedro\\PycharmProjects\\pythonProject\\testeDeModelo\\audios\\2.mp3",
+                         diretorio_saida= "C:\\Users\\pedro\\PycharmProjects\\pythonProject\\testeDeModelo\\audios\\")

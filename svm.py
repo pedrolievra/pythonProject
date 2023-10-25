@@ -8,8 +8,8 @@ from sklearn.metrics import f1_score
 from sklearn.metrics import precision_score
 
 # Diretórios de treinamento e teste para os espectrogramas
-diretorio_treinamento = '/home/machine/Downloads/SinaisdeTeste/pythonProject/train'
-diretorio_teste = '/home/machine/Downloads/SinaisdeTeste/pythonProject/test'
+diretorio_treinamento = 'C:\\Users\\pedro\\PycharmProjects\\pythonProject\\train'
+diretorio_teste = 'C:\\Users\\pedro\\PycharmProjects\\pythonProject\\test'
 
 # Função para carregar os espectrogramas
 def carregar_transformada_fourier_e_rotulos(diretorio):
@@ -64,7 +64,7 @@ print("Acurácia no conjunto de teste:", acuracia)
 print("F1-score no conjunto de teste:", f1)
 print("Precisão no conjunto de teste:", precisao)
 
-diretoriotestedoteste = '/home/machine/Downloads/SinaisdeTeste/pythonProject/testeDeModelo/espectogramas'
+diretoriotestedoteste = 'C:\\Users\\pedro\\PycharmProjects\\pythonProject\\testeDeModelo\\espectogramas'
 # Carregar e remodelar os espectrogramas capturados
 def carregar_transformada_fourier_direto(diretorio):
     transformadas = []
@@ -94,8 +94,8 @@ espectrogramas_capturados = espectrogramas_capturados.reshape(espectrogramas_cap
 # Classificar os espectrogramas capturados com a SVM
 rotulos_preditos_capturados = clf.predict(espectrogramas_capturados)
 
-# Mapear os índices de classes de volta para as frequências
-frequencias = ["freq1", "freq2", "freq3", "freq4", "freq5", "freq6"]
+
+frequencias = ["1kHz", "5khz", "10kHz", "500Hz"]
 frequencias_preditas_capturados = [frequencias[idx] for idx in rotulos_preditos_capturados]
 
 print("Frequências detectadas nos espectrogramas capturados:", frequencias_preditas_capturados)

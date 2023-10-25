@@ -8,8 +8,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Defina a pasta de entrada e saída
-pasta_entrada = '/home/machine/Downloads/SinaisdeTeste/pythonProject/testeDeModelo/audios'
-pasta_saida = '/home/machine/Downloads/SinaisdeTeste/pythonProject/testeDeModelo/espectogramas'
+pasta_entrada = 'C:\\Users\\pedro\\PycharmProjects\\pythonProject\\testeDeModelo\\audios'
+pasta_saida = 'C:\\Users\\pedro\\PycharmProjects\\pythonProject\\testeDeModelo\\espectogramas'
 
 # Crie a pasta de saída se ela não existir
 if not os.path.exists(pasta_saida):
@@ -41,3 +41,8 @@ for arquivo_wav in arquivos_wav:
     plt.close()
 
 print('Espectrogramas gerados e salvos com sucesso!')
+
+
+
+
+
