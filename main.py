@@ -45,5 +45,5 @@ def record_audio(interval):
 
 
 if __name__ == "__main__":
-    num_recordings = 100  # Número de gravações a serem feitas
+    num_recordings =   # Número de gravações a serem feitas
     record_audio(num_recordings)
