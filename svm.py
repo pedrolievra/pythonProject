@@ -66,7 +66,7 @@ print("Acurácia no conjunto de teste:", acuracia)
 print("F1-score no conjunto de teste:", f1)
 print("Precisão no conjunto de teste:", precisao)
 
-diretoriotestedoteste = '/home/machine/code/pythonProject/testeDeModelo/espectogramas'
+diretoriotestedoteste = '/home/machine/code/pythonProject/processo/audios/espectogramas'
 # Carregar e remodelar os espectrogramas capturados
 def carregar_transformada_fourier_direto(diretorio):
     transformadas = []
@@ -97,11 +97,11 @@ espectrogramas_capturados = espectrogramas_capturados.reshape(espectrogramas_cap
 rotulos_preditos_capturados = clf.predict(espectrogramas_capturados)
 
 
-frequencias = ["1kHz", "5khz", "10kHz", "500Hz"]
+frequencias = ["500Hz","1kHz", "5khz", "10kHz", ]
 frequencias_preditas_capturados = [frequencias[idx] for idx in rotulos_preditos_capturados]
 
 print("Frequências detectadas nos espectrogramas capturados:", frequencias_preditas_capturados)
 
 # Salvar o modelo treinado
-nome_arquivo_modelo = 'modelo_svm.sav'
+nome_arquivo_modelo = '/home/machine/code/pythonProject/modelo_svm.sav'
 pickle.dump(clf, open(nome_arquivo_modelo, 'wb'))

@@ -3,7 +3,7 @@ import soundfile as sf
 import matplotlib.pyplot as plt
 
 # Carregue o arquivo de áudio
-audio_file = "Senoide5kRuidoIndustrial4nova.wav"
+audio_file = "/home/machine/Downloads/SinaisdeTeste/1.wav"
 y, sr = sf.read(audio_file)
 
 # Especificações do filtro Butterworth (exemplo: passa-faixa de 4.5 kHz a 5.5 kHz)

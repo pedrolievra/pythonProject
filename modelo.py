@@ -5,7 +5,7 @@ from sklearn import svm
 import pickle
 
 # Diretório onde os espectrogramas estão localizados para teste
-diretoriotestedoteste = '/home/machine/code/pythonProject/testeDeModelo/espectogramas'
+diretoriotestedoteste = '/home/machine/code/pythonProject/processo/audios/espectogramas'
 
 # Carregar e remodelar os espectrogramas capturados
 def carregar_transformada_fourier_direto(diretorio):
@@ -24,7 +24,7 @@ def carregar_transformada_fourier_direto(diretorio):
     return np.array(transformadas)
 
 # Carregar o modelo treinado
-nome_arquivo_modelo = 'modelo_svm.sav'
+nome_arquivo_modelo = '/home/machine/code/pythonProject/modelo_svm.sav'
 clf = pickle.load(open(nome_arquivo_modelo, 'rb'))
 
 # Carregar os espectrogramas diretamente do diretório
